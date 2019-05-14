@@ -8,6 +8,19 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+
+import {
+  createAppContainer,
+  createBottomTabNavigator,
+  createStackNavigator,
+  createSwitchNavigator
+} from "react-navigation";
+import Home from './src/Home'
+import Channel from './src/Channel'
+import Dynamic from './src/Dynamic'
+import ShopVip from './src/ShopVip'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -16,34 +29,79 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
+const BottomTab = createBottomTabNavigator({
+  Home: {
+    screen: Home,
+    navigationOptions: {
+      tabBarLabel: "首页",
+      tabBarIcon:({focused, horizontal, tintColor})=>{
+        return <AntDesign name={'home'} size={30} style={{color:tintColor}}/>
+      }
+    }
+  },
+  Channel: {
+    screen: Channel,
+    navigationOptions: {
+      tabBarLabel: "频道",
+      tabBarIcon:({ focused, horizontal, tintColor })=>{
+        return <AntDesign name={'appstore-o'} size={30} style={{color:tintColor}}/>
+      }
+    }
+  },
+  Dynamic: {
+    screen: Dynamic,
+    navigationOptions: {
+      tabBarLabel: "动态",
+      tabBarIcon:({ focused, horizontal, tintColor })=>{
+        return <AntDesign name={'staro'} size={30} style={{color:tintColor}}/>
+      }
+    }
+  },
+  ShopVip: {
+    screen: ShopVip,
+    navigationOptions: {
+      tabBarLabel: "会员购",
+      tabBarIcon:({ focused, horizontal, tintColor })=>{
+        return <AntDesign name={'shoppingcart'} size={30} style={{color:tintColor}}/>
+      }
+    }
+  },
+},{
+  tabBarOptions: {
+    activeTintColor: '#f45a8d',
+    labelStyle:{
+      fontSize:15,
+    },
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
 });
+
+const RootStack = createStackNavigator({
+  app: BottomTab
+},{
+  defaultNavigationOptions: {
+    header: null,
+  }
+});
+
+export default AppContainer = createAppContainer(RootStack);
+
+// type Props = {};
+// export default class App extends Component<Props> {
+//   render() {
+//     return (
+//         <View style={styles.container}>
+//
+//         </View>
+//     );
+//   }
+// }
+//
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: '#F5FCFF',
+//   },
+//
+// });
