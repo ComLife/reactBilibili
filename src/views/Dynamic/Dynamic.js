@@ -6,7 +6,7 @@ export default class Dynamic extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<SafeAreaView/>
+				<SafeAreaView style={{backgroundColor: Colors.theme}}/>
 				<Text style={styles.welcome}>Dynamic!</Text>
 			</View>
 		);

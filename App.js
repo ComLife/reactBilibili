@@ -9,7 +9,6 @@
 import React from "react";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Colors from "./src/config/ComStyle";
-
 import {
 	createAppContainer,
 	createBottomTabNavigator,
@@ -26,7 +25,7 @@ const BottomTab = createBottomTabNavigator({
 		navigationOptions: {
 			tabBarLabel: "首页",
 			tabBarIcon:({ tintColor })=>{
-				return <AntDesign name={"home"} size={30} style={{color:tintColor}}/>;
+				return <AntDesign name={"home"} size={25} style={{color:tintColor}}/>;
 			}
 		}
 	},
@@ -35,7 +34,7 @@ const BottomTab = createBottomTabNavigator({
 		navigationOptions: {
 			tabBarLabel: "频道",
 			tabBarIcon:({ tintColor })=>{
-				return <AntDesign name={"appstore-o"} size={30} style={{color:tintColor}}/>;
+				return <AntDesign name={"appstore-o"} size={25} style={{color:tintColor}}/>;
 			}
 		}
 	},
@@ -44,7 +43,7 @@ const BottomTab = createBottomTabNavigator({
 		navigationOptions: {
 			tabBarLabel: "动态",
 			tabBarIcon:({ tintColor })=>{
-				return <AntDesign name={"staro"} size={30} style={{color:tintColor}}/>;
+				return <AntDesign name={"staro"} size={25} style={{color:tintColor}}/>;
 			}
 		}
 	},
@@ -53,7 +52,7 @@ const BottomTab = createBottomTabNavigator({
 		navigationOptions: {
 			tabBarLabel: "会员购",
 			tabBarIcon:({ tintColor })=>{
-				return <AntDesign name={"shoppingcart"} size={30} style={{color:tintColor}}/>;
+				return <AntDesign name={"shoppingcart"} size={25} style={{color:tintColor}}/>;
 			},
 		}
 	},
@@ -61,12 +60,11 @@ const BottomTab = createBottomTabNavigator({
 	tabBarOptions: {
 		activeTintColor: Colors.theme,
 		labelStyle:{
-			fontSize:15,
+			fontSize:12,
 		},
 
 		tabStyle: {
-			marginTop: 5,
-			height:55,
+			// 控制首页图标和字体
 		},
 		style: {
 			backgroundColor: Colors.themeWhite

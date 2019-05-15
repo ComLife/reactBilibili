@@ -6,7 +6,7 @@ export default class ShopVip extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<SafeAreaView/>
+				<SafeAreaView style={{backgroundColor: Colors.theme}}/>
 				<Text style={styles.welcome}>ShopVip!</Text>
 			</View>
 		);
