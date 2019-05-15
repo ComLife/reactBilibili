@@ -5,29 +5,47 @@
  * 首页功能
  */
 
-import React, {Component} from "react";
-import {Platform, StyleSheet, Text, View, Image} from "react-native";
-import Colors from "../config/ComStyle";
-import EvilIcons from "react-native-vector-icons/EvilIcons";
+import React, {Component,} from "react";
+import PropTypes from 'prop-types';
+import {Platform, StyleSheet, View, Image, TouchableOpacity} from "react-native";
 import Imgs from "../config/Imgs";
 
 export default class HeaderCp extends Component {
+
+	static defaultProps = {
+
+	};
+
+	static propTypes = {
+		navigatorClick: PropTypes.func
+	};
+
+	// 构造
+	constructor (props) {
+		super(props)
+
+	}
+
 	render() {
 		return (
-			<View style={styles.container}>
-				<EvilIcons.Button name={"navicon"} size={25} backgroundColor={Colors.theme} onPress={()=>{}}/>
-				<Image source={Imgs.headerIcon} style={{width:30, height:30, borderRadius: 15 }}/>
+			<View >
+				<TouchableOpacity style={styles.headerTouchView} onPress={()=>{this.props.navigatorClick()}}>
+					<Image source={Imgs.foldIcon} style={[styles.IconSize, {marginRight: 10}]}/>
+					<Image source={Imgs.headerIcon} style={[styles.IconSize, {borderRadius: 15}]}/>
+				</TouchableOpacity>
 			</View>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
-	container: {
-	    width: 80,
+	headerTouchView: {
 		height: 60,
-		backgroundColor: Colors.theme,
 		flexDirection: "row",
-		alignItems: "center"
+		alignItems: "center",
 	},
+	IconSize: {
+		width:25,
+		height:25,
+	}
 });
