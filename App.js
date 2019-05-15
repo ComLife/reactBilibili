@@ -6,28 +6,19 @@
  * @flow
  */
 
-import React, {Component} from "react";
-import {Platform, StyleSheet, Text, View} from "react-native";
+import React from "react";
 import AntDesign from "react-native-vector-icons/AntDesign";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import Colors from "./src/config/ComStyle";
 
 import {
 	createAppContainer,
 	createBottomTabNavigator,
 	createStackNavigator,
-	createSwitchNavigator
 } from "react-navigation";
-import Home from "./src/Home";
-import Channel from "./src/Channel";
-import Dynamic from "./src/Dynamic";
-import ShopVip from "./src/ShopVip";
-
-const instructions = Platform.select({
-	ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
-	android:
-    "Double tap R on your keyboard to reload,\n" +
-    "Shake or press menu button for dev menu",
-});
+import Home from "./src/views/Home/Home";
+import Channel from "./src/views/Channel/Channel";
+import Dynamic from "./src/views/Dynamic/Dynamic";
+import ShopVip from "./src/views/ShopVip/ShopVip";
 
 const BottomTab = createBottomTabNavigator({
 	Home: {
@@ -63,15 +54,23 @@ const BottomTab = createBottomTabNavigator({
 			tabBarLabel: "会员购",
 			tabBarIcon:({ tintColor })=>{
 				return <AntDesign name={"shoppingcart"} size={30} style={{color:tintColor}}/>;
-			}
+			},
 		}
 	},
 },{
 	tabBarOptions: {
-		activeTintColor: "#f45a8d",
+		activeTintColor: Colors.theme,
 		labelStyle:{
 			fontSize:15,
 		},
+
+		tabStyle: {
+			marginTop: 5,
+			height:55,
+		},
+		style: {
+			backgroundColor: Colors.themeWhite
+		}
 	}
 });
 

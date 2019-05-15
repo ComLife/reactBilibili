@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, SafeAreaView} from 'react-native';
+import React, {Component} from "react";
+import {Platform, StyleSheet, Text, View, SafeAreaView} from "react-native";
+import Colors from "../../config/ComStyle";
 
 export default class Dynamic extends Component {
 	render() {
@@ -15,13 +16,13 @@ export default class Dynamic extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: '#F5FCFF',
+		justifyContent: "center",
+		alignItems: "center",
+		backgroundColor: Colors.themeBackground,
 	},
 	welcome: {
 		fontSize: 20,
-		textAlign: 'center',
+		textAlign: "center",
 		margin: 10,
 	},
 
