@@ -1,0 +1,24 @@
+dependencies: \
+  /Users/wangchunguang/Documents/reactBilibili/node_modules/react-native/Libraries/Text/VirtualText/RCTVirtualTextShadowView.m \
+  /Users/wangchunguang/Documents/reactBilibili/node_modules/react-native/Libraries/Text/VirtualText/RCTVirtualTextShadowView.h \
+  /Users/wangchunguang/Documents/reactBilibili/node_modules/react-native/Libraries/Text/BaseText/RCTBaseTextShadowView.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/React/RCTLayout.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/yoga/YGValue.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/wangchunguang/Documents/reactBilibili/node_modules/react-native/Libraries/Text/RCTTextAttributes.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/wangchunguang/Documents/reactBilibili/node_modules/react-native/Libraries/Text/RCTTextTransform.h \
+  /Users/wangchunguang/Documents/reactBilibili/ios/build/reactBilibili/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView+Layout.h \
+  /Users/wangchunguang/Documents/reactBilibili/node_modules/react-native/Libraries/Text/RawText/RCTRawTextShadowView.h
