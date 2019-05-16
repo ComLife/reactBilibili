@@ -1,13 +1,16 @@
 import React, {Component} from "react";
-import {Platform, StyleSheet, Text, View, SafeAreaView} from "react-native";
+import {Platform, StyleSheet, Text, View } from "react-native";
 import Colors from "../../config/ComStyle";
+import HeaderChannel from "../../components/HeaderChannel";
+import { SafeAreaView } from 'react-navigation';
 
 export default class Channel extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
 				<SafeAreaView style={{backgroundColor: Colors.theme}}/>
-				<Text style={styles.welcome}>Channel!</Text>
+                <HeaderChannel/>
+                <Text style={styles.welcome}>Channel!</Text>
 			</View>
 		);
 	}
@@ -16,8 +19,6 @@ export default class Channel extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: "center",
-		alignItems: "center",
 		backgroundColor: Colors.themeBackground,
 	},
 	welcome: {

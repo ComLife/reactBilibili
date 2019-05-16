@@ -1,6 +1,7 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
+ * author: wangchunguang
  *
  * 首页功能
  */
@@ -34,7 +35,7 @@ export default class HeaderHome extends Component {
 				</TouchableOpacity>
 				<View style={styles.endView}>
 					<TouchableOpacity onPress={()=>{console.log("HeaderHome is game")}}>
-						<Image source={Imgs.agmeIcon} style={styles.IconSize}/>
+						<Image source={Imgs.gameIcon} style={styles.IconSize}/>
 					</TouchableOpacity>
 					<TouchableOpacity onPress={()=>{console.log("HeaderHome is dowmload")}}>
 						<Image source={Imgs.downloadIcon} style={styles.IconSize}/>
