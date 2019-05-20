@@ -19,6 +19,8 @@ import Home from "./src/views/Home/Home";
 import Channel from "./src/views/Channel/Channel";
 import Dynamic from "./src/views/Dynamic/Dynamic";
 import ShopVip from "./src/views/ShopVip/ShopVip";
+import MenuScreen from './src/views/UserInfo/MenuScreen';
+
 import {Dimensions, ScrollView, View} from "react-native";
 const screen = Dimensions.get('window');
 
@@ -83,7 +85,7 @@ const DraWer = createDrawerNavigator({
 }, {
 	drawerPosition: 'left',
 	edgeWidth: 50,
-	// contentComponent: props => (<MenuScreen {...props}/>),
+	contentComponent: props => (<MenuScreen {...props}/>),
 });
 
 const RootStack = createStackNavigator({

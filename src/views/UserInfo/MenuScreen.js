@@ -22,11 +22,11 @@ export default class MenuScreen extends Component<Props> {
         this.props.navigation.closeDrawer();
         break;
       case '设置':
-        this.props.navigation.navigate('Settings');
+        this.props.navigation.navigate('Channel');
         this.props.navigation.closeDrawer();
         break;
       case '帮助':
-        this.props.navigation.navigate('Help');
+        this.props.navigation.navigate('Dynamic');
         this.props.navigation.closeDrawer();
         break;
       default:
