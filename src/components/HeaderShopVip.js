@@ -22,7 +22,7 @@ export default class HeaderShopVip extends Component {
     }
 
     drawNavigator = ()=>{
-        console.log("drawNavigator")
+        this.props.navigation.openDrawer();
     }
 
     render() {

@@ -9,7 +9,7 @@ export default class Dynamic extends Component {
 		return (
 			<View style={styles.container}>
 				<SafeAreaView style={{backgroundColor: Colors.theme}}/>
-				<HeaderDynamic/>
+				<HeaderDynamic {...this.props}/>
 				<Text style={styles.welcome}>Dynamic!</Text>
 			</View>
 		);

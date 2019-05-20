@@ -9,7 +9,7 @@ export default class ShopVip extends Component {
 		return (
 			<View style={styles.container}>
 				<SafeAreaView style={{backgroundColor: Colors.theme}}/>
-                <HeaderShopVip/>
+                <HeaderShopVip {...this.props}/>
 				<Text style={styles.welcome}>ShopVip!</Text>
 			</View>
 		);

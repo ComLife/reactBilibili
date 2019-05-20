@@ -8,9 +8,9 @@ import ScrollableTabView, { ScrollableTabBar, DefaultTabBar } from 'react-native
 
 const screen = Dimensions.get('window');
 export default class Home extends Component {
-
     constructor(props) {
         super(props);
+        console.log("Home =", this.props);
         this.state = {
             tabShow: false,
             label: ['直播', '推荐', '热门', '追番', '影视', '70年'],
@@ -22,7 +22,7 @@ export default class Home extends Component {
 		return (
 			<View style={styles.container}>
 				<SafeAreaView style={{backgroundColor: Colors.theme }}/>
-				<HeaderHome/>
+				<HeaderHome {...this.props}/>
 				<ScrollableTabView
                     tabBarTextStyle={{width:screen.width/6, textAlign: 'center'}}
                     renderTabBar={() =>

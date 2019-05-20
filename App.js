@@ -13,11 +13,14 @@ import {
 	createAppContainer,
 	createBottomTabNavigator,
 	createStackNavigator,
+	createDrawerNavigator, SafeAreaView,
 } from "react-navigation";
 import Home from "./src/views/Home/Home";
 import Channel from "./src/views/Channel/Channel";
 import Dynamic from "./src/views/Dynamic/Dynamic";
 import ShopVip from "./src/views/ShopVip/ShopVip";
+import {Dimensions, ScrollView, View} from "react-native";
+const screen = Dimensions.get('window');
 
 const BottomTab = createBottomTabNavigator({
 	Home: {
@@ -72,12 +75,28 @@ const BottomTab = createBottomTabNavigator({
 	}
 });
 
-const RootStack = createStackNavigator({
-	app: BottomTab
-},{
-	defaultNavigationOptions: {
-		header: null,
-	}
+const DraWer = createDrawerNavigator({
+	BottomTab: {
+		screen: BottomTab,
+	},
+
+}, {
+	drawerPosition: 'left',
+	edgeWidth: 50,
+	// contentComponent: props => (<MenuScreen {...props}/>),
 });
+
+const RootStack = createStackNavigator({
+	// app: BottomTab,
+	DraWer: DraWer,
+}, {
+	defaultNavigationOptions: {
+		initialRouteName: 'DraWer',
+		header: null,
+		headerMode: 'none',
+	}
+})
+
+
 
 export default createAppContainer(RootStack);

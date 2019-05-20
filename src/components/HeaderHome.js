@@ -16,13 +16,11 @@ export default class HeaderHome extends Component {
 	// 构造
 	constructor (props) {
 		super(props);
-		this.data = [{img: Imgs.foldIcon, fun: this.drawNavigator}]
-
 	}
 
 	drawNavigator = ()=>{
-		console.log("drawNavigator")
-	}
+		this.props.navigation.openDrawer();
+	};
 
 	render() {
 		return (
