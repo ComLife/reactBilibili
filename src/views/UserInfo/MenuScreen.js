@@ -5,100 +5,130 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, SafeAreaView, ScrollView, View} from 'react-native';
+import {StyleSheet, ScrollView, View, Dimensions, Text, Image,} from "react-native";
+import {SafeAreaView} from "react-navigation";
+import Colors from "../../config/ComStyle";
+import Imgs from "../../config/Imgs";
 
-import {
-  Avatar,
-  Text,
-  ListItem,
-} from 'react-native-elements';
 
 type Props = {};
+const screen = Dimensions.get('window');
 export default class MenuScreen extends Component<Props> {
-  configHandler = (name) => {
-    switch(name) {
-      case '首页':
-        this.props.navigation.navigate('Home');
-        this.props.navigation.closeDrawer();
-        break;
-      case '设置':
-        this.props.navigation.navigate('Channel');
-        this.props.navigation.closeDrawer();
-        break;
-      case '帮助':
-        this.props.navigation.navigate('Dynamic');
-        this.props.navigation.closeDrawer();
-        break;
-      default:
-        break;
-    }
-  };
+  constructor(props){
+    super(props);
+    this.configList1 = [
+      {
+        title: '首页',
+        icon: Imgs.homeIcon,
+      },
+      {
+        title: '历史记录',
+        icon: Imgs.historyIcon,
+      },
+      {
+        title: '离线缓存',
+        icon: Imgs.cacheIcon,
+      },
+      {
+        title: '我的收藏',
+        icon: Imgs.colletIcon,
+      },
+      {
+        title: '稍后再看',
+        icon: Imgs.laterLookIcon,
+      },
+    ];
+    this.configList2 = [
+      {
+        title: '直播中心',
+        icon: Imgs.ios_tvIcon,
+      },
+      {
+        title: '免流量服务',
+        icon: Imgs.flowIcon,
+      },
+      {
+        title: '我的订单',
+        icon: Imgs.orderIcon,
+      },
+      {
+        title: '会员购中心',
+        icon: Imgs.VIPIcon,
+      },
+      {
+        title: '联系客服',
+        icon: Imgs.service_fillIcon,
+      },
+    ]
+  }
+
+  TitleHeaderView(){
+    return <View style={styles.avatarWrapper}>
+
+    </View>
+  }
+
+  MemberBenefitsView(){
+    return <View style={styles.MemberView}>
+
+    </View>
+  }
+
+  serverView(list){
+    return <View style={styles.serverView}>
+      {list.map((item, i)=>{
+        return <View style={styles.serverItemView} key={i}>
+          <Image source={item.icon} style={{width:20, height:20, marginLeft: 20}}/>
+          <Text style={{ marginLeft: 30, color: Colors.themeText }}>{item.title}</Text>
+        </View>
+      })}
+    </View>
+  }
 
   render() {
+    console.log(" MenuScreen this.props=",this.props);
     return (
-      <ScrollView style={styles.container}>
-        <SafeAreaView>
-          <View style={styles.avatarWrapper}>
-            <Avatar
-              size="large"
-              rounded
-              icon={{name: 'user', type: 'font-awesome'}}
-              activeOpacity={0.7}
-              source={{
-                uri:
-                  // 'https://b-ssl.duitang.com/uploads/item/201505/26/20150526033548_NjZxS.thumb.700_0.jpeg',
-                  'https://images.liqucn.com/img/h1/h965/img201709161425250_info300X300.jpg',
-              }}
-            />
-            <Text style={styles.avatarName}>菜猪小朋友</Text>
-            <Text style={styles.avatarDesc}>点击编辑</Text>
-          </View>
-          <View style={styles.configWrapper}>
-            {
-              configList.map((item, i) => (
-                <ListItem
-                  key={i}
-                  title={item.title}
-                  leftIcon={{ name: item.icon, color: '#fff' }}
-                  containerStyle={{backgroundColor: '#000', opacity: 0.9}}
-                  titleStyle={{color: '#fff'}}
-                  onPress={() => this.configHandler(item.title)}
-                />
-              ))
-            }
-          </View>
-        </SafeAreaView>
-      </ScrollView>
+        <View style={styles.container}>
+          <ScrollView
+              bounces = {false}
+          >
+            <SafeAreaView style={{backgroundColor: Colors.theme}}/>
+            {this.TitleHeaderView()}
+            {this.MemberBenefitsView()}
+            {this.serverView(this.configList1)}
+            {this.serverView(this.configList2)}
+          </ScrollView>
+         <View style={{height: 60}}></View>
+        </View>
     )
   }
 }
 
-const configList = [
-  {
-    title: '首页',
-    icon: 'home',
-  },
-  {
-    title: '设置',
-    icon: 'settings',
-  },
-  {
-    title: '帮助',
-    icon: 'help',
-  }
-]
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: 'black',
+    backgroundColor: Colors.themeBackground,
     opacity: 0.9,
   },
+
   avatarWrapper: {
-    flex: 1,
-    padding: 20,
-    alignItems: 'center',
+    height: screen.width*0.35,
+    backgroundColor: Colors.theme,
+  },
+  MemberView: {
+    height: 60,
+    backgroundColor: Colors.themeWhite,
+  },
+  serverView:{
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderTopColor: Colors.themeGray,
+    borderTopWidth: 0.2,
+  },
+  serverItemView:{
+    height: 50,
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   avatarName: {
     color: '#fff',

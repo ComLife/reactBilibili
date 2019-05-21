@@ -72,7 +72,7 @@ const BottomTab = createBottomTabNavigator({
 			// 控制首页图标和字体
 		},
 		style: {
-			backgroundColor: Colors.themeWhite
+			backgroundColor: Colors.themeBackground
 		}
 	}
 });
@@ -84,7 +84,8 @@ const DraWer = createDrawerNavigator({
 
 }, {
 	drawerPosition: 'left',
-	edgeWidth: 50,
+	drawerLockMode: 'unlocked',//设置是否响应手势
+	drawerWidth: screen.width * 0.7, //抽屉的宽度或返回的功能。
 	contentComponent: props => (<MenuScreen {...props}/>),
 });
 
