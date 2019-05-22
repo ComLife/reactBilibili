@@ -21,4 +21,7 @@ export default {
 	settingIcon: require("../assets/setting.png"),
 	skin_fillIcon: require("../assets/skin_fill.png"),
 	StarNightIcon: require("../assets/StarNight.png"),
+	hotIcon: require("../assets/hot.png"),
+	lightBulbIcon: require("../assets/light_bulb.png"),
+	uploadIcon: require("../assets/upload.png"),
 };
