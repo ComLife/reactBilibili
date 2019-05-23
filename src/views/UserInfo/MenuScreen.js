@@ -52,13 +52,13 @@ export default class MenuScreen extends Component<Props> {
   }
 
   MemberBenefitsView(){
-    return <View style={styles.MemberView}>
+    return <TouchableOpacity style={styles.MemberView} onPress={()=>{this.props.navigation.navigate('VipDetails')}}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Text style={styles.memVipText}>我的大会员</Text>
         <Text style={styles.memInterText}>了解更多权益</Text>
       </View>
       <Text>开通大会员畅看番剧国创</Text>
-    </View>
+    </TouchableOpacity>
   }
 
   serverView(list){

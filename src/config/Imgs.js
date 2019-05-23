@@ -24,4 +24,7 @@ export default {
 	hotIcon: require("../assets/hot.png"),
 	lightBulbIcon: require("../assets/light_bulb.png"),
 	uploadIcon: require("../assets/upload.png"),
+    backIcon: require("../assets/back.png"),
+    closeIcon: require("../assets/close.png"),
+    retreatIcon: require("../assets/retreat.png"),
 };

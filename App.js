@@ -20,6 +20,7 @@ import Channel from "./src/views/Channel/Channel";
 import Dynamic from "./src/views/Dynamic/Dynamic";
 import ShopVip from "./src/views/ShopVip/ShopVip";
 import MenuScreen from './src/views/UserInfo/MenuScreen';
+import VipDetails from './src/views/UserInfo/DrawView/VipDetails'
 
 import {Dimensions, ScrollView, View} from "react-native";
 const screen = Dimensions.get('window');
@@ -91,11 +92,18 @@ const DraWer = createDrawerNavigator({
 
 const RootStack = createStackNavigator({
 	// app: BottomTab,
-	DraWer: DraWer,
+	DraWer: {
+        screen: DraWer,
+        navigationOptions: {
+            header:null
+        }
+	},
+    VipDetails: {
+        screen: VipDetails,
+    }
 }, {
 	defaultNavigationOptions: {
 		initialRouteName: 'DraWer',
-		header: null,
 		headerMode: 'none',
 	}
 })
