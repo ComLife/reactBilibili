@@ -104,6 +104,7 @@ const RootStack = createStackNavigator({
 }, {
 	defaultNavigationOptions: {
 		initialRouteName: 'DraWer',
+		gesturesEnabled: false,
 		headerMode: 'none',
 	}
 })
