@@ -1,28 +1,18 @@
 import React, {Component} from "react";
-import {Platform, StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import {Platform, StyleSheet, Text, View, TouchableOpacity, Dimensions, Image, ImageBackground} from "react-native";
 import Colors from "../../../config/ComStyle";
 import { SafeAreaView } from 'react-navigation';
-import LogoTitle from '../../../components/HeaderBack'
+import LogoTitle from '../../../components/HeaderBack';
+import Imgs from '../../../config/Imgs';
+import SwiperCom from '../../../components/swiperCom';
 
-// class LogoTitle extends React.Component {
-//     render() {
-//         console.log("LogoTitle=", this.props);
-//         return (
-//             <View style={styles.backView}>
-//                 <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}}>
-//                     <Icon name={'arrowleft'} size={30} color={'#ffffff'}/>
-//                 </TouchableOpacity>
-//                 <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}}>
-//                     <Icon name={'close'} size={30} color={'#ffffff'} style={{marginLeft: 30, marginRight: 20}}/>
-//                 </TouchableOpacity>
-//
-//                 <Text style={styles.backText}>大会员</Text>
-//             </View>
-//
-//         );
-//     }
-// }
+const vipItem = [{title: '会员积分', level: '0分'},
+        {title: '音乐下载', level: '0首'},
+        {title: 'B币券', level: '0币'},
+        {title: '卡券包', level: '特权礼包'}
+    ];
 
+const screen = Dimensions.get('window');
 export default class VipDetails extends Component {
     static navigationOptions = ({navigation})=>{
         console.log("navigationOptions", navigation);
@@ -41,6 +31,19 @@ export default class VipDetails extends Component {
         return (
             <View style={styles.container}>
                 <SafeAreaView style={{backgroundColor: Colors.theme}}/>
+                <View style={{backgroundColor: Colors.themeWhite, height: 200}}>
+                    <View style={styles.titleStyle}>
+                    </View>
+                    <View style={styles.titleBotView}>
+                        {vipItem.map((item, index)=>{
+                            return <View key={index} style={[styles.titleItemView, {borderRightWidth:index===3?0:1}]}>
+                                <Text style={{color: Colors.themeGray}}>{item.title}</Text>
+                                <Text style={{color: Colors.themeGray}}>{item.level}</Text>
+                            </View>
+                        })}
+                    </View>
+                </View>
+                <SwiperCom/>
                 <Text style={styles.welcome}>VipDetails!</Text>
             </View>
         );
@@ -67,6 +70,26 @@ const styles = StyleSheet.create({
         color: Colors.themeWhite,
         fontSize: 18,
         fontWeight: 'bold'
+    },
+    titleStyle: {
+        marginTop: 10,
+        width: screen.width - 20,
+        height: 120,
+        marginHorizontal: 10,
+        backgroundColor: Colors.themeGray,
+        borderRadius: 10
+    },
+    titleBotView: {
+        flexDirection: 'row',
+        height: 50,
+        marginHorizontal: 10,
+        marginTop: 10
+    },
+    titleItemView: {
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        width: (screen.width - 20) / 4,
+        borderRightColor: Colors.themeGray,
+        borderRightWidth: 1
     }
-
 });

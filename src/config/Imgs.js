@@ -27,4 +27,5 @@ export default {
     backIcon: require("../assets/back.png"),
     closeIcon: require("../assets/close.png"),
     retreatIcon: require("../assets/retreat.png"),
+    testIcon: require("../assets/test.png"),
 };
