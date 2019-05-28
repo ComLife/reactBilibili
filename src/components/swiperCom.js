@@ -6,17 +6,18 @@ import {
     View,
     Dimensions
 } from 'react-native';
-
+const screen = Dimensions.get('window');
 import Swiper from 'react-native-swiper';
 
 const { width } = Dimensions.get('window')
 
 export default class hello extends Component {
+
     render() {
         return (
             <Swiper style={styles.wrapper} horizontal={true} autoplay={true}
-                    dot={<View style={{backgroundColor:'rgba(0,0,0,.2)', width: 8, height: 8,borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 100,}} />}
                     autoplayTimeout={1}
+                    paginationStyle={{bottom:-100, left:300}}
             >
                 <View style={styles.slide1}>
                     <Text style={styles.text}>第一页</Text>
@@ -28,6 +29,7 @@ export default class hello extends Component {
                     <Text style={styles.text}>第三页</Text>
                 </View>
             </Swiper>
+
         );
     }
 }
@@ -35,28 +37,33 @@ export default class hello extends Component {
 const styles = StyleSheet.create({
     wrapper: {
         height: 100,
-
     },
 
     slide1: {
-        height: 100,
+        flex:1,
+        marginHorizontal: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#9DD6EB'
+        backgroundColor: '#9DD6EB',
+        borderRadius: 10
     },
 
     slide2: {
-        height: 100,
+        flex:1,
+        marginHorizontal: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#97CAE5'
+        backgroundColor: '#97CAE5',
+        borderRadius: 10
     },
 
     slide3: {
-        height: 100,
+        flex:1,
+        marginHorizontal: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#92BBD9'
+        backgroundColor: '#92BBD9',
+        borderRadius: 10
     },
 
     text: {

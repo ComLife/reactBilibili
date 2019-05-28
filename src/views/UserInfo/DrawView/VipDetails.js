@@ -31,7 +31,7 @@ export default class VipDetails extends Component {
         return (
             <View style={styles.container}>
                 <SafeAreaView style={{backgroundColor: Colors.theme}}/>
-                <View style={{backgroundColor: Colors.themeWhite, height: 200}}>
+                <View style={{backgroundColor: Colors.themeWhite, height: 230}}>
                     <View style={styles.titleStyle}>
                     </View>
                     <View style={styles.titleBotView}>
@@ -43,7 +43,9 @@ export default class VipDetails extends Component {
                         })}
                     </View>
                 </View>
-                <SwiperCom/>
+                <View style={styles.swiperView}>
+                    <SwiperCom/>
+                </View>
                 <Text style={styles.welcome}>VipDetails!</Text>
             </View>
         );
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
     titleStyle: {
         marginTop: 10,
         width: screen.width - 20,
-        height: 120,
+        height: 150,
         marginHorizontal: 10,
         backgroundColor: Colors.themeGray,
         borderRadius: 10
@@ -91,5 +93,11 @@ const styles = StyleSheet.create({
         width: (screen.width - 20) / 4,
         borderRightColor: Colors.themeGray,
         borderRightWidth: 1
+    },
+    swiperView: {
+        marginTop: 10,
+        height: 120,
+        backgroundColor: Colors.themeWhite,
+        paddingVertical: 10
     }
 });
