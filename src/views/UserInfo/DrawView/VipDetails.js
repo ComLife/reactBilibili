@@ -98,6 +98,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
         height: 120,
         backgroundColor: Colors.themeWhite,
-        paddingVertical: 10
+        paddingVertical: 10,
     }
 });

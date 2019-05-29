@@ -9,15 +9,14 @@ import {
 const screen = Dimensions.get('window');
 import Swiper from 'react-native-swiper';
 
-const { width } = Dimensions.get('window')
-
 export default class hello extends Component {
 
     render() {
+        console.log("screen.width", screen.width)
         return (
             <Swiper style={styles.wrapper} horizontal={true} autoplay={true}
-                    autoplayTimeout={1}
-                    paginationStyle={{bottom:-100, left:300}}
+                    autoplayTimeout={3}
+                    paginationStyle={{bottom:5, left:300}}
             >
                 <View style={styles.slide1}>
                     <Text style={styles.text}>第一页</Text>
@@ -71,9 +70,4 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold'
     },
-
-    image: {
-        width,
-        flex: 1
-    }
 });
