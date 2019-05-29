@@ -1,35 +1,47 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Colors from "../config/ComStyle";
 import {
     StyleSheet,
     Text,
     View,
+    TouchableOpacity,
     Dimensions
 } from 'react-native';
 const screen = Dimensions.get('window');
 import Swiper from 'react-native-swiper';
 
-export default class hello extends Component {
+export default class SwiperCOm extends Component {
+    static propTypes = {
+        swiperData: PropTypes.array,
+    };
 
+    static defaultProps = {
+
+    };
+    constructor(props){
+        super(props)
+    }
     render() {
-        console.log("screen.width", screen.width)
         return (
             <Swiper style={styles.wrapper} horizontal={true} autoplay={true}
                     autoplayTimeout={3}
                     paginationStyle={{bottom:5, left:300}}
             >
-                <View style={styles.slide1}>
-                    <Text style={styles.text}>第一页</Text>
-                </View>
-                <View style={styles.slide2}>
-                    <Text style={styles.text}>第二页</Text>
-                </View>
-                <View style={styles.slide3}>
-                    <Text style={styles.text}>第三页</Text>
-                </View>
+                {this.props.swiperData.map((item, index)=>{
+                    return <TouchableOpacity style={styles.slide1} key={index} activeOpacity={1} onPress={()=>{
+                        this.swiperClick(item)
+                    }}>
+                        <Text style={styles.text}>{item.tip}</Text>
+                    </TouchableOpacity>
+                })}
             </Swiper>
 
         );
+    }
+
+    swiperClick = (data)=>{
+        console.log("swiperClick is data =", data)
     }
 }
 
@@ -44,24 +56,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#9DD6EB',
-        borderRadius: 10
-    },
-
-    slide2: {
-        flex:1,
-        marginHorizontal: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#97CAE5',
-        borderRadius: 10
-    },
-
-    slide3: {
-        flex:1,
-        marginHorizontal: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#92BBD9',
         borderRadius: 10
     },
 

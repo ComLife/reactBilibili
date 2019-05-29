@@ -11,9 +11,8 @@ import Colors from "../../config/ComStyle";
 import Imgs from "../../config/Imgs";
 
 
-type Props = {};
 const screen = Dimensions.get('window');
-export default class MenuScreen extends Component<Props> {
+export default class MenuScreen extends Component {
   constructor(props){
     super(props);
     this.configList1 = [
