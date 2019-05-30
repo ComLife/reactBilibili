@@ -4,7 +4,6 @@ import Colors from "../config/ComStyle";
 import {
     StyleSheet,
     Text,
-    View,
     TouchableOpacity,
     Dimensions
 } from 'react-native';
@@ -55,12 +54,12 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#9DD6EB',
+        backgroundColor: Colors.lightCyan,
         borderRadius: 10
     },
 
     text: {
-        color: '#fff',
+        color: Colors.themeWhite,
         fontSize: 30,
         fontWeight: 'bold'
     },

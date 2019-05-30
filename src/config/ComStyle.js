@@ -5,4 +5,5 @@ export default {
 	themeGray: "#8a8a8a",
 	themeText: "#515151",
 	themeBlack: "#2c2c2c",
+    lightCyan: "#9DD6EB"
 };

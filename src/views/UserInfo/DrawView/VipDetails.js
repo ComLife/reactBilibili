@@ -21,14 +21,34 @@ const swiperData = [
     ];
 
 const vipContentData = [
-    {Type: '番剧', list: 3},
-    {Type: '国创', list: 3},
-    {Type: '电影', list: 3},
-    {Type: '大福袋', list: 2},
-    {Type: '年度专享游戏礼包', list: 2},
-    {Type: '付费音乐任性听', list: 3},
-    {Type: '头像挂件兑换', list: 3},
-    {Type: '卡片装饰商城', list: 2}
+    {title:'番剧', Type: 'drama', list: [{drama:'多罗罗', updata:'更新至第20话', fans:'314.0万人追番', isExclusive: true},
+            {drama:'盾只勇者成名录', updata:'更新至第21话', fans:'296.6万人追番', isExclusive: true},
+            {drama:'鬼灭之刃', updata:'更新至第8话', fans:'222.1万人追番', isExclusive: true}]
+    },
+    {title:'国创', Type: 'drama', list: [{drama:'少年歌行', updata:'更新至第25话', fans:'126.5万人追番', isExclusive: false},
+            {drama:'非人哉', updata:'更新至第44话', fans:'96.4万人追番', isExclusive: false},
+            {drama:'凹凸世界', updata:'更新至第18话', fans:'63.0万人追番', isExclusive: true}]
+    },
+    {title:'电影', Type: 'drama', list: [{drama:'钢琴家', updata:null, fans:null, isExclusive: false},
+            {drama:'冬日将至', updata:null, fans:null, isExclusive: false},
+            {drama:'摩登仙履奇缘', updata:null, fans:null, isExclusive: false}]
+    },
+    {title:'大福袋', Type: 'gift', list: [{image:'地址', theme:null, price:null, tip: null},
+            {image:'地址', theme:null, price:null, tip: null}]
+    },
+    {title:'年度专享游戏礼包', Type: 'gift', list: [{image:'地址', theme:'Fate/Grand Order', price:'原价100', tip: '年度大会员免费'},
+            {image:'地址', theme:'方舟指令', price:'原价100', tip: '年度大会员免费'}]
+    },
+    {title:'付费音乐任性听', Type: 'song', list: [{image:'地址', tip:'畅想SQ无损音质'},
+            {image:'地址', tip:'专享海量曲库'},
+            {image:'地址', tip:'600首/月下载额'}]
+    },
+    {title:'头像挂件兑换', Type: 'song', list: [{image:'地址', tip:'全职高手'},
+            {image:'地址', tip:'纳米核心'},
+            {image:'地址', tip:'快把我哥带走'}]},
+    {title:'卡片装饰商城', Type: 'store', list: [{image:'地址', theme:'请吃红小豆吧', tip:'大会员'},
+            {image:'地址', theme:'BML22', tip:'免费'}]
+    }
 ];
 
 const screen = Dimensions.get('window');
