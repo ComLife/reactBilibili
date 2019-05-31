@@ -24,52 +24,72 @@ export default class VipContent extends Component {
         super(props)
     }
 
+    dramaView = (data)=>{
+        console.log("dramaView", data);
+        return data.list.map((item, index)=>{
+            return <View style={styles.contentItemView} key={index}>
+                <View style={styles.contentShow}>
+                    {item.isExclusive?<View style={styles.exclusiveView}>
+                        <Text style={styles.exclusiveText}>独家</Text>
+                    </View>:null}
+                    {item.fans?<Text style={[styles.exclusiveText,{marginLeft: 5, position: 'absolute', bottom: 5}]}>{item.fans}</Text>:null}
+                </View>
+                <Text style={{color:Colors.themeBlack, marginTop: 5}}>{item.drama}</Text>
+                {item.updata?<Text style={{color:Colors.themeText, marginTop: 5}}>{item.updata}</Text>:null}
+            </View>
+        });
+    };
+
+    giftView = (data)=>{
+        return data.list.map((item, index)=>{
+            return <View style={styles.contentItemView} key={index}>
+                <View style={styles.giftItem}></View>
+                {item.theme?<Text style={{color:Colors.themeBlack, marginTop: 5}}>{item.theme}</Text>:null}
+                {item.price?<Text style={{color:Colors.themeGray, fontSize: 11, marginTop: 5, textDecorationLine:'line-through'}}>{item.price}</Text>:null}
+                {item.tip?<Text style={{color:Colors.theme, fontSize: 13, marginTop: 5}}>{item.tip}</Text>:null}
+            </View>
+        });
+    };
+
+    songView = (data)=>{
+        return data.list.map((item, index)=>{
+            return <View style={styles.songView} key={index}>
+                <View style={styles.songItemView}></View>
+                <Text style={{marginTop: 5, color:Colors.themeBlack, fontSize: 12}}>{item.tip}</Text>
+            </View>
+        });
+    };
+
+    storeView = (data)=>{
+        return data.list.map((item, index)=>{
+            return <View style={styles.storeView} key={index}>
+                <View style={styles.storeItemView}>
+                    <View style={styles.storeContent}></View>
+                    <Text style={styles.storeText}>{item.theme}</Text>
+                    <Text style={[styles.storeText, {fontSize: 12, color:Colors.theme}]}>{item.tip}</Text>
+                </View>
+            </View>
+        });
+    };
+
+
     ContentItem = (data)=>{
         console.log("ContentItem=", data);
         switch(data.Type){
             case 'drama':
-                return data.list.map((item, index)=>{
-                    return <View style={styles.contentItemView} key={index}>
-                        <View style={styles.contentShow}>
-                            {item.isExclusive?<View style={styles.exclusiveView}>
-                                <Text style={styles.exclusiveText}>独家</Text>
-                            </View>:null}
-                            {item.fans?<Text style={[styles.exclusiveText,{marginLeft: 5, position: 'absolute', bottom: 5}]}>{item.fans}</Text>:null}
-                        </View>
-                        <Text style={{color:Colors.themeBlack, marginTop: 5}}>{item.drama}</Text>
-                        {item.updata?<Text style={{color:Colors.themeText, marginTop: 5}}>{item.updata}</Text>:null}
-                    </View>
-                });
+                return this.dramaView(data);
                 break;
 
             case 'gift':
-                return data.list.map((item, index)=>{
-                    return <View style={styles.contentItemView} key={index}>
-                        <View style={styles.giftItem}></View>
-                        {item.theme?<Text style={{color:Colors.themeBlack, marginTop: 5}}>{item.theme}</Text>:null}
-                        {item.price?<Text style={{color:Colors.themeGray, fontSize: 11, marginTop: 5, textDecorationLine:'line-through'}}>{item.price}</Text>:null}
-                        {item.tip?<Text style={{color:Colors.theme, fontSize: 13, marginTop: 5}}>{item.tip}</Text>:null}
-                    </View>
-                });
+                return this.giftView(data);
                 break;
+
             case 'song':
-                return data.list.map((item, index)=>{
-                    return <View style={styles.songView} key={index}>
-                        <View style={styles.songItemView}></View>
-                        <Text style={{marginTop: 5, color:Colors.themeBlack, fontSize: 12}}>{item.tip}</Text>
-                    </View>
-                });
+                return this.songView(data);
                 break;
+
             case 'store':
-                return data.list.map((item, index)=>{
-                    return <View style={styles.storeView} key={index}>
-                        <View style={styles.storeItemView}>
-                            <View style={styles.storeContent}></View>
-                            <Text style={styles.storeText}>{item.theme}</Text>
-                            <Text style={[styles.storeText, {fontSize: 12}]}>{item.tip}</Text>
-                        </View>
-                    </View>
-                });
+                return this.storeView(data);
                 break;
         }
     };
