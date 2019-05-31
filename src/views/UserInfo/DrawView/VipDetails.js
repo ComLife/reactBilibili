@@ -36,8 +36,8 @@ const vipContentData = [
     {title:'大福袋', Type: 'gift', list: [{image:'地址', theme:null, price:null, tip: null},
             {image:'地址', theme:null, price:null, tip: null}]
     },
-    {title:'年度专享游戏礼包', Type: 'gift', list: [{image:'地址', theme:'Fate/Grand Order', price:'原价100', tip: '年度大会员免费'},
-            {image:'地址', theme:'方舟指令', price:'原价100', tip: '年度大会员免费'}]
+    {title:'年度专享游戏礼包', Type: 'gift', list: [{image:'地址', theme:'Fate/Grand Order', price:'原价 100', tip: '年度大会员免费'},
+            {image:'地址', theme:'方舟指令', price:'原价 100', tip: '年度大会员免费'}]
     },
     {title:'付费音乐任性听', Type: 'song', list: [{image:'地址', tip:'畅想SQ无损音质'},
             {image:'地址', tip:'专享海量曲库'},
@@ -107,7 +107,7 @@ export default class VipDetails extends Component {
                     </View>
                     <VipContent vipContentData={vipContentData}/>
                 </ScrollView>
-                <Text style={styles.welcome}>VipDetails!</Text>
+                {/*<Text style={styles.welcome}>VipDetails!</Text>*/}
             </View>
         );
     }
@@ -118,11 +118,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Colors.themeBackground,
     },
-    welcome: {
-        fontSize: 20,
-        textAlign: "center",
-        margin: 10,
-    },
+    // welcome: {
+    //     fontSize: 20,
+    //     textAlign: "center",
+    //     margin: 10,
+    // },
     backView: {
         flexDirection: 'row',
         justifyContent: 'center',
