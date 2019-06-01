@@ -16,40 +16,92 @@ export default class MenuScreen extends Component {
   constructor(props){
     super(props);
     this.configList1 = [
-      {title: '首页', icon: Imgs.homeIcon,},
-      {title: '历史记录', icon: Imgs.historyIcon,},
-      {title: '离线缓存', icon: Imgs.cacheIcon,},
-      {title: '我的收藏', icon: Imgs.colletIcon,},
-      {title: '稍后再看', icon: Imgs.laterLookIcon,},
+      {title: '首页', icon: Imgs.homeIcon, type: 'home'},
+      {title: '历史记录', icon: Imgs.historyIcon, type: 'history'},
+      {title: '离线缓存', icon: Imgs.cacheIcon, type: 'cache'},
+      {title: '我的收藏', icon: Imgs.colletIcon, type: 'collet'},
+      {title: '稍后再看', icon: Imgs.laterLookIcon, type: 'later'},
     ];
     this.configList2 = [
-      {title: '直播中心', icon: Imgs.ios_tvIcon,},
-      {title: '免流量服务', icon: Imgs.flowIcon,},
-      {title: '我的订单', icon: Imgs.orderIcon,},
-      {title: '会员购中心', icon: Imgs.VIPIcon,},
-      {title: '联系客服', icon: Imgs.service_fillIcon,},
+      {title: '直播中心', icon: Imgs.ios_tvIcon, type: 'paly'},
+      {title: '免流量服务', icon: Imgs.flowIcon, type: 'flow'},
+      {title: '我的订单', icon: Imgs.orderIcon, type: 'order'},
+      {title: '会员购中心', icon: Imgs.VIPIcon, type: 'vip'},
+      {title: '联系客服', icon: Imgs.service_fillIcon, type: 'server'},
+      {title: '用例测试', icon: Imgs.testIcon, type: 'test'},
     ];
     this.configList3 = [
-      {title: '投稿', icon: Imgs.uploadIcon,},
-      {title: '创作中心', icon: Imgs.lightBulbIcon,},
-      {title: '热门活动', icon: Imgs.hotIcon,},
+      {title: '投稿', icon: Imgs.uploadIcon, type: 'upload'},
+      {title: '创作中心', icon: Imgs.lightBulbIcon, type: 'bulb'},
+      {title: '热门活动', icon: Imgs.hotIcon, type: 'hot'},
     ];
     this.configList4 = [
-      {title: '设置', icon: Imgs.settingIcon,},
-      {title: '主题', icon: Imgs.skin_fillIcon,},
-      {title: '夜间', icon: Imgs.StarNightIcon,},
+      {title: '设置', icon: Imgs.settingIcon, type: 'set'},
+      {title: '主题', icon: Imgs.skin_fillIcon, type: 'skin'},
+      {title: '夜间', icon: Imgs.StarNightIcon, type: 'night'},
     ];
     this.configList5 = [
-      {title: '动态' }, {title: '关注' }, {title: '粉丝' },
+      {title: '动态', type: 'dynamic' },
+      {title: '关注', type: 'attention' },
+      {title: '粉丝', type: 'fans' },
     ]
   }
 
+  // 昵称头像部分
   TitleHeaderView(){
     return <View style={styles.avatarWrapper}>
 
     </View>
   }
 
+  allDrewClick(type){
+      switch(type){
+          case 'home':
+            break;
+          case 'history':
+              break;
+          case 'cache':
+              break;
+          case 'collet':
+              break;
+          case 'later':
+              break;
+          case 'paly':
+              break;
+          case 'flow':
+              break;
+          case 'order':
+              break;
+          case 'vip':
+              break;
+          case 'server':
+              break;
+          case 'test':
+              this.props.navigation.navigate('TestComponentDetails');
+              break;
+          case 'upload':
+              break;
+          case 'bulb':
+              break;
+          case 'hot':
+              break;
+          case 'set':
+              break;
+          case 'skin':
+              break;
+          case 'night':
+              break;
+          case 'dynamic':
+              break;
+          case 'attention':
+              break;
+          case 'fans':
+              break;
+
+      }
+  }
+
+  //我的大会员部分
   MemberBenefitsView(){
     return <TouchableOpacity style={styles.MemberView} onPress={()=>{this.props.navigation.navigate('VipDetails')}}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -63,7 +115,7 @@ export default class MenuScreen extends Component {
   serverView(list){
     return <View style={styles.serverView}>
       {list.map((item, index)=>{
-        return <TouchableOpacity style={styles.serverItemView} key={index}>
+        return <TouchableOpacity style={styles.serverItemView} key={index} onPress={()=>{this.allDrewClick(item.type)}}>
           <Image source={item.icon} style={{width:20, height:20, marginLeft: 20}}/>
           <Text style={{ marginLeft: 30, color: Colors.themeText }}>{item.title}</Text>
         </TouchableOpacity>
@@ -73,17 +125,18 @@ export default class MenuScreen extends Component {
 
   bottomView(list){
     return list.map((item, index)=>{
-      return <TouchableOpacity key={index} style={styles.settingItem}>
+      return <TouchableOpacity key={index} style={styles.settingItem} onPress={()=>{this.allDrewClick(item.type)}}>
         <Image source={item.icon} style={{width:20, height:20}}/>
         <Text style={{ marginLeft: 5, color: Colors.themeText }}>{item.title}</Text>
       </TouchableOpacity>
     })
   }
 
+  //
   dynamicView(list){
     return <View style={styles.daynamicView}>
       {list.map((item, index)=>{
-        return <TouchableOpacity style={styles.daynamicItem} key={index}>
+        return <TouchableOpacity style={styles.daynamicItem} key={index} onPress={()=>{this.allDrewClick(item.type)}}>
           <Text style={{ color: Colors.themeText, marginBottom: 8 }}>0</Text>
           <Text style={{ color: Colors.themeText }}>{item.title}</Text>
         </TouchableOpacity>

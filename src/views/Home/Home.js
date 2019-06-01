@@ -5,6 +5,11 @@ import Colors from "../../config/ComStyle";
 import HeaderHome from "../../components/HeaderHome";
 import ScrollableTabView, { ScrollableTabBar, DefaultTabBar } from 'react-native-scrollable-tab-view';
 
+const recommendData = [
+	{Type: 'swiper', data: ['image1', 'image2', 'image3', 'image4', 'image5']},
+    {Type: 'video', data: {playNum: '3.4万', comment: 183, time: 126, title: 'python输出进度条', typeName: '影视杂谈*科幻', isAttention: false}},
+    {Type: 'article', data: {playNum: 74, conmment: 0, time: null, title: 'web前端新手须知', typeName: '生活日常', isAttention: false}},
+];
 
 const screen = Dimensions.get('window');
 export default class Home extends Component {

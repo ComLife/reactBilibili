@@ -20,7 +20,11 @@ import Channel from "./src/views/Channel/Channel";
 import Dynamic from "./src/views/Dynamic/Dynamic";
 import ShopVip from "./src/views/ShopVip/ShopVip";
 import MenuScreen from './src/views/UserInfo/MenuScreen';
-import VipDetails from './src/views/UserInfo/DrawView/VipDetails'
+import VipDetails from './src/views/UserInfo/DrawView/VipDetails';
+import TestComponentDetails from './src/views/test/TestComponentDetails';
+import CustomScrollView from './src/views/test/testCoponents/CustomScrollView';
+import FlatListDup from './src/views/test/testCoponents/FlatListDup'
+import SectionListDup from './src/views/test/testCoponents/SectionListDup'
 
 import {Dimensions, ScrollView, View} from "react-native";
 const screen = Dimensions.get('window');
@@ -100,7 +104,19 @@ const RootStack = createStackNavigator({
 	},
     VipDetails: {
         screen: VipDetails,
-    }
+    },
+    TestComponentDetails: {
+        screen: TestComponentDetails,
+    },
+    CustomScrollView: {
+        screen: CustomScrollView,
+    },
+    FlatListDup: {
+        screen: FlatListDup,
+    },
+    SectionListDup: {
+        screen: SectionListDup,
+    },
 }, {
 	defaultNavigationOptions: {
 		initialRouteName: 'DraWer',
