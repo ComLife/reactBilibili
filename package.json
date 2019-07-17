@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "ios-xs-max": "react-native run-ios --port 8083 --simulator=\"iPhone Xs Max\"",
     "test": "jest"
   },
   "dependencies": {

@@ -12,6 +12,7 @@ export default class TestComponentDetails extends React.Component{
                 {title: 'FlatList滑动组件'},
                 {title: 'GesturePasswords九宫格密码'},
                 {title: 'CustomScrollView滑动删除'},
+                {title: 'React-native-scrollable-tab-view 自定义tabbar'},
             ]
         }
     }
@@ -39,6 +40,9 @@ export default class TestComponentDetails extends React.Component{
                 break;
             case 4:
                 this.props.navigation.navigate('CustomScrollView');
+                break;
+            case 5:
+                this.props.navigation.navigate('ScrollableTabbar');
                 break;
         }
     }

@@ -23,8 +23,9 @@ import MenuScreen from './src/views/UserInfo/MenuScreen';
 import VipDetails from './src/views/UserInfo/DrawView/VipDetails';
 import TestComponentDetails from './src/views/test/TestComponentDetails';
 import CustomScrollView from './src/views/test/testCoponents/CustomScrollView';
-import FlatListDup from './src/views/test/testCoponents/FlatListDup'
-import SectionListDup from './src/views/test/testCoponents/SectionListDup'
+import FlatListDup from './src/views/test/testCoponents/FlatListDup';
+import SectionListDup from './src/views/test/testCoponents/SectionListDup';
+import ScrollableTabbar from './src/views/test/testCoponents/ScrollableTabbar';
 
 import {Dimensions, ScrollView, View} from "react-native";
 const screen = Dimensions.get('window');
@@ -117,9 +118,12 @@ const RootStack = createStackNavigator({
     SectionListDup: {
         screen: SectionListDup,
     },
+	ScrollableTabbar: {
+		screen: ScrollableTabbar,
+	},
 }, {
+	initialRouteName: 'DraWer',
 	defaultNavigationOptions: {
-		initialRouteName: 'DraWer',
 		gesturesEnabled: false,
 		headerMode: 'none',
 	}
