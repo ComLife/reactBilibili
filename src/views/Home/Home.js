@@ -17,7 +17,8 @@ export default class Home extends Component {
         super(props);
         console.log("Home =", this.props);
         this.state = {
-            tabShow: false,
+			val: 0,
+			tabShow: false,
             label: ['直播', '推荐', '热门', '追番', '影视', '70年'],
 			channel: [{title: '直播', type: 1},{title: '推荐', type: 2},{title: '热门', type: 3},{title: '追番', type: 4},{title: '影视', type: 5},{title: '70年', type: 6}]
         };
